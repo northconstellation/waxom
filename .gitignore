@@ -1,0 +1,18 @@
+# Архивы, дистрибутивы
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Базы данных, логи
+*.log
+*.sql
+*.sqlite
+
+# Модули Node, логи npm
+node_modules/
+npm-debug.log
