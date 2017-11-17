@@ -21,6 +21,7 @@ gulp.task('sprite', function() {
     spriteData.css.pipe(gulp.dest('./app/css/')); // путь, куда сохраняем стили
 });
 
+
 gulp.task('sass', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass({includePaths: require("node-bourbon").includePaths})
@@ -28,8 +29,6 @@ gulp.task('sass', function() {
         .pipe(rename({suffix: '.min', prefix : ''}))
         .pipe(autoprefixer(['last 15 versions'])) //подключаем Autoprefixer
         .pipe(cleanCSS())
-        .pipe(csscomb())
-        .pipe(csso()) // минифицируем css, полученный на предыдущем шаге
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}))
 });
@@ -40,6 +39,11 @@ gulp.task('browserSync', ['sass'], function() {
             baseDir: 'app'
         }
     })
+});
+gulp.task('compress', function() {
+    gulp.src('src/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('app/img'))
 });
 
 gulp.task('watch', ['sass', 'browserSync'], function() {
