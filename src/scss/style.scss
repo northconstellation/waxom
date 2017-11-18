@@ -114,3 +114,41 @@ body {
   }
 }
 
+.b-container__excellent{
+  padding: 86px 0 0;
+  .b-excellent__title {
+    text-align: left;
+    margin: 0 0 20px 0;
+  }
+  .b-excellent__text{
+    text-align: left;
+    color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .container .row .col {
+    font-size: 0;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.b-container__partners{
+  padding: 130px 0;
+  background-image: url(../img/partners_bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  img{
+    max-width: 100%;
+    padding: 0 5%;
+  }
+}
+
+
+footer{
+  padding: 10px 0 55px;
+  background: #111111;
+}
